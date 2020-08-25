@@ -1,0 +1,213 @@
+$fuente: 'Prompt', sans-serif;
+$color-primario: #D23140;
+$color-secundario: #BCBCBC;
+$color-fondo: #f0f0f0;
+$color-bloque: white;
+$color-fuente: grey;
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  font-family: $fuente;
+	margin: 20px;
+  padding: 0px;
+  background-color: $color-fondo;
+  font-size: 15px;
+  color: $color-fuente;
+}
+
+button {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: $color-primario;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: black;
+  &__title {
+    margin: 0px;
+    padding: 0px;
+    font-size: 50px;
+  }
+  &__subtitle {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+  }
+}
+
+.nav {
+  background-color: $color-secundario;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  border-radius: 10px;
+  height: 60px;
+  font-size: 17px;
+  font-weight: bold;
+  &__acerca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-primario;
+  }
+  &__home{
+    @extend .nav__acerca;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  &__portfolio{
+    @extend .nav__acerca;
+  }
+  &__blog{
+    @extend .nav__acerca;
+  }
+  &__contact{
+    @extend .nav__acerca;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+.destacada {
+  background-color: $color-bloque;
+  margin: 20px 0px;
+  border-radius: 10px;
+  display: grid;
+  height: 250px;
+  grid-template: 10% 15% 75% / 30% 30% 40%;
+  padding: 20px;
+  &__titulo{
+    color: $color-primario;
+    font-weight: bold;
+    font-size: 25px;
+    grid-column: 1 / 3;
+    margin-top: 10px;
+    &--gris{
+      grid-column: 1 / 3;
+      font-weight: bold;
+    }
+  }
+  &__text {
+    grid-column: 1 / 3;
+    text-align: justify;
+    line-height: 110%;
+    margin-top: 15px;
+  }
+  &__img {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
+    height: 180px;
+    width: 80%;
+    border: 1px solid $color-secundario;
+    padding: 5px;
+  }
+}
+
+.section {
+  background-color: $color-bloque;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0px;
+  &__info {
+    margin: 0px;
+  }
+  &__nota {
+    display: flex;
+    margin: 0px;
+    height: 150px;
+    border-bottom: 1px solid $color-secundario;
+    margin-bottom: 10px;
+    &--left {
+      width: 25%;
+      a {
+        color: $color-primario;
+      }
+    }
+    &--right {
+      width: 75%;
+    }
+  }
+
+  &__comentarios {
+    font-style: italic;
+    margin: 0px;
+  }
+}
+
+.notaright {
+  &__titulo {
+    color: $color-primario;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  &__text {
+    margin: 0px 0px 20px 0px;
+  }
+  &__link {
+    color: $color-primario;
+  }
+}
+
+.catzone {
+  background-color: $color-bloque;
+  border-radius: 10px;
+  display: flex;
+  &__img {
+    width: 30%;
+    margin: 20px;
+  }
+  &__text {
+
+  }
+}
+
+.footer img {
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-fondo;
+  &__images {
+    margin: 0px 10px;
+    width: 20%;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+  }
+  &__legend {
+    margin: 0px 30px;
+    font-size: 12px;
+  }
+}
